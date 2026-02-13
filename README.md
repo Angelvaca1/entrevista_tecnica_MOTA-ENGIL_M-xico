@@ -44,10 +44,14 @@ Proyecto_entrevista/
 ├── Dockerfile
 ├── docker-compose.yml
 └── README.md
+
 ⚙️ Instalación y Despliegue
+
 1️⃣ Clonar el repositorio
+
 git clone https://github.com/Angelvaca1/entrevista_tecnica_MOTA-ENGIL_M-xico.git
 cd entrevista_tecnica_MOTA-ENGIL_M-xico
+
 2️⃣ Configurar variables de entorno
 
 Crea un archivo .env en la raíz del proyecto y añade tus credenciales:
