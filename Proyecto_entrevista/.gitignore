@@ -1,0 +1,13 @@
+# Entorno virtual
+venv_backend2/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Variables de entorno
+.env
+
+# Archivos subidos por usuarios
+uploads/*
+!uploads/.gitkeep

@@ -1,0 +1,35 @@
+services: # 1. Eliminamos 'version' (ya es obsoleta)
+  db:
+    image: mysql:8
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Admin2005
+      MYSQL_DATABASE: backend_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    # 2. Agregamos un Healthcheck para que Docker sepa CUÁNDO está lista la DB
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pAdmin2005"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    container_name: fastapi_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy # 3. Espera a que el healthcheck de la DB sea exitoso
+    env_file:
+      - .env
+    volumes:
+      - ./uploads:/app/uploads
+
+volumes:
+  db_data:
