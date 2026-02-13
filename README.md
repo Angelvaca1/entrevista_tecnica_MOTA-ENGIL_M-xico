@@ -39,7 +39,7 @@ Proyecto_entrevista/
 Sigue estos pasos para levantar el proyecto desde cero:
 1. Clonar el repositorio
 Bash
-git clone https://github.com/tu-usuario/tu-proyecto.git
+git clone https://github.com/Angelvaca1/entrevista_tecnica_MOTA-ENGIL_M-xico.git
 cd tu-proyecto
 2. Configurar variables de entorno
 Crea un archivo llamado .env en la raíz del proyecto y añade tus credenciales (agregaré el archivo env desde el correo)
